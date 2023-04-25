@@ -8,6 +8,36 @@
 
 This demo example shows how to utilize DevExpress Blazor and .NET MAUI components to develop a .NET MAUI Blazor Hybrid app. 
 
+## Views Built with MAUI
+
+<img src="media/maui-views.png" alt="Views built with the DevExpress for .NET MAUI library" height="400">
+
+### Login View
+
+This page shows how to implement a login UI in your .NET MAUI application.
+
+**Available user:** "User" with the password "123".
+
+**File to look at:** [LoginPage.xaml](BlazorDemo.MAUI/MauiViews/LoginPage.xaml)
+
+**Read more:** [Authentication](https://docs.devexpress.com/MAUI/404307/scenarios/authenticate)
+
+### Blogs View
+
+This page uses our [DXCollectionView](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView?p=netframework) component to show a collection of items with infinite scrolling.
+
+**File to look at:** [BlogsPage.xaml](BlazorDemo.MAUI/MauiViews/BlogsPage.xaml)
+
+**Read more:** [Infinite Scrolling](https://docs.devexpress.com/MAUI/404358/scenarios/infinite-grid-scroll)
+
+### Analytics View
+
+This page shows how to use our [SimpleButton](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton) components to create clickable cards.
+
+**File to look at:** [AnalyticsPage.xaml](BlazorDemo.MAUI/MauiViews/AnalyticsPage.xaml)
+
+**Read more:** [Cards with Custom Content](https://docs.devexpress.com/MAUI/404341/scenarios/buttons-and-charts-in-cards)
+
 ## Files to Review
 
 * [BlazorDemo.Shared/Components](./BlazorDemo.Shared/Components) -- Shared Razor components for MAUI and Blazor.
