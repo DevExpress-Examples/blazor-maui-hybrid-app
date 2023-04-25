@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.Charts;assembly=DevExpress.Maui.Charts"
+             xmlns:viewModels="clr-namespace:BlazorDemo.MAUI.ViewModels"
+             x:Class="BlazorDemo.MAUI.MauiViews.PageviewsAreaChartView">
+    <ContentView.BindingContext>
+        <viewModels:PageviewsAreaChartViewModel/>
+    </ContentView.BindingContext>
+    <Grid RowDefinitions="Auto, *">
+        <Label Text="Pageviews, month" TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource White}}" FontAttributes="Bold"/>
+        <dxc:ChartView Grid.Row="1">
+            <dxc:ChartView.ChartStyle>
+                <dxc:ChartStyle BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+            </dxc:ChartView.ChartStyle>
+            <dxc:ChartView.Series>
+                <dxc:AreaSeries>
+                    <dxc:AreaSeries.Data>
+                        <dxc:SeriesDataAdapter DataSource="{Binding PageviewStats}" ArgumentDataMember="Date">
+                            <dxc:SeriesDataAdapter.ValueDataMembers>
+                                <dxc:ValueDataMember Type="Value" Member="Count"/>
+                            </dxc:SeriesDataAdapter.ValueDataMembers>
+                        </dxc:SeriesDataAdapter>
+                    </dxc:AreaSeries.Data>
+                    <dxc:AreaSeries.Style>
+                        <dxc:AreaSeriesStyle Fill="#9A82DB">
+                            <dxc:AreaSeriesStyle.FillEffect>
+                                <dxc:TransparencyGradient BaselineAlpha="0" SeriesLineAlpha="0.4"/>
+                            </dxc:AreaSeriesStyle.FillEffect>
+                        </dxc:AreaSeriesStyle>
+                    </dxc:AreaSeries.Style>
+                </dxc:AreaSeries>
+            </dxc:ChartView.Series>
+            <dxc:ChartView.AxisY>
+                <dxc:NumericAxisY AlwaysShowZeroLevel="False" AutoRangeMode="VisibleValues">
+                    <dxc:NumericAxisY.Label>
+                        <dxc:AxisLabel>
+                            <dxc:AxisLabel.Style>
+                                <dxc:AxisLabelStyle>
+                                    <dxc:AxisLabelStyle.TextStyle>
+                                        <dxc:TextStyle Size="12"/>
+                                    </dxc:AxisLabelStyle.TextStyle>
+                                </dxc:AxisLabelStyle>
+                            </dxc:AxisLabel.Style>
+                        </dxc:AxisLabel>
+                    </dxc:NumericAxisY.Label>
+                </dxc:NumericAxisY>
+            </dxc:ChartView.AxisY>
+            <dxc:ChartView.AxisX>
+                <dxc:DateTimeAxisX MeasureUnit="Month" GridAlignment="Month" GridSpacing="2" EmptyRangesVisible="False">
+                    <dxc:DateTimeAxisX.Label>
+                        <dxc:AxisLabel TextFormat="MMM">
+                            <dxc:AxisLabel.Style>
+                                <dxc:AxisLabelStyle>
+                                    <dxc:AxisLabelStyle.TextStyle>
+                                        <dxc:TextStyle Size="12"/>
+                                    </dxc:AxisLabelStyle.TextStyle>
+                                </dxc:AxisLabelStyle>
+                            </dxc:AxisLabel.Style>
+                        </dxc:AxisLabel>
+                    </dxc:DateTimeAxisX.Label>
+                </dxc:DateTimeAxisX>
+            </dxc:ChartView.AxisX>
+        </dxc:ChartView>
+    </Grid>
+</ContentView>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BlazorDemo.MAUI"
+             xmlns:views="clr-namespace:BlazorDemo.MAUI.MauiViews"
+             x:Class="BlazorDemo.MAUI.AppShell"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <ShellContent ContentTemplate="{DataTemplate views:LoginPage}" Route="Login"/>
+    <TabBar>
+        <Tab Title="Blogs" Icon="blogs">
+            <ShellContent ContentTemplate="{DataTemplate views:BlogsPage}" Route="Blogs"/>
+        </Tab>
+        <Tab Title="Tasks" Icon="tasks">
+            <ShellContent ContentTemplate="{DataTemplate views:HybridGridPage}" Route="Tasks"/>
+        </Tab>
+        <Tab Title="Analytics" Icon="analytics">
+            <ShellContent ContentTemplate="{DataTemplate views:AnalyticsPage}" Route="Analytics"/>
+        </Tab>
+    </TabBar>
+</Shell>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.Charts;assembly=DevExpress.Maui.Charts"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:views="clr-namespace:BlazorDemo.MAUI.MauiViews"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="BlazorDemo.MAUI.MauiViews.AnalyticsPage"
+             Shell.TitleColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+             Title="Analytics">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource Black}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}"/>
+    </ContentPage.Behaviors>
+    <ScrollView>
+        <VerticalStackLayout>
+            <views:ChannelsDonutView HeightRequest="250" HorizontalOptions="Fill" Margin="20,0,20,0" x:Name="donutView"/> 
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*,*" >
+                <dxco:SimpleButton Style="{StaticResource cardButtonStyle}" HeightRequest="100" Clicked="AnalyticsItemClicked">
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="*,*">
+                        <Label FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}" Text="Active Users" VerticalOptions="Start"/>
+                        <Image Source="online" Grid.Column="1" WidthRequest="16" HeightRequest="16"  VerticalOptions="Start"/>
+                        <HorizontalStackLayout Grid.Row="1" VerticalOptions="End">
+                            <Label TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" Text="120" FontAttributes="Bold"/>
+                            <Label TextColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}" Text="online" Margin="4,0,0,0"/>
+                        </HorizontalStackLayout>
+                    </Grid>
+                </dxco:SimpleButton>
+                <dxco:SimpleButton Style="{StaticResource cardButtonStyle}" HeightRequest="100" Grid.Column="1" Clicked="AnalyticsItemClicked">
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="*,*">
+                        <Label FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}" Text="Conversion" VerticalOptions="Start"/>
+                        <Image Source="goal" Grid.Column="1" WidthRequest="20" HeightRequest="16" VerticalOptions="Start"/>
+                        <HorizontalStackLayout Grid.Row="1" VerticalOptions="End">
+                            <Label TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" Text="3.4%" FontAttributes="Bold"/>
+                            <Label TextColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}" Text="this week" Margin="4,0,0,0"/>
+                        </HorizontalStackLayout>
+                    </Grid>
+                </dxco:SimpleButton>
+                <Border WidthRequest="{Binding Source={x:Reference pageviewsItem}, Path=Width}" HeightRequest="{Binding Source={x:Reference pageviewsItem}, Path=Height}" Style="{StaticResource shadowBorder}" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="White"/>
+                <dxco:SimpleButton x:Name="pageviewsItem" Style="{StaticResource cardButtonStyle}" Grid.Row="1" HeightRequest="250" Grid.ColumnSpan="2" Shadow="{x:Null}" Clicked="AnalyticsItemClicked">
+                    <Grid>
+                        <views:PageviewsAreaChartView Opacity="0.9" InputTransparent="True"/>
+                    </Grid>
+                </dxco:SimpleButton>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

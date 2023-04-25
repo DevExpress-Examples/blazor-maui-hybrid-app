@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlazorDemo.MAUI.MauiViews.LoginPage"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:viewModels="clr-namespace:BlazorDemo.MAUI.ViewModels"
+             Shell.NavBarIsVisible="False"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors">
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource TitleTextColor}}"  />
+        </Style>
+    </ContentPage.Resources>
+    <Grid RowDefinitions="*,Auto" IgnoreSafeArea="true">
+        <Image Source="{AppThemeBinding Light=loginbackground.png, Dark=loginbackground_black.png}" Aspect="AspectFill" Margin="0,0,0,-40"/>
+        <Label Text="DevExpress" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="40" TextColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray50}}"/>
+        <Label Text="Your next great app starts here" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="14" Margin="0,60,0,0" TextColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}"/>
+        <Border VerticalOptions="End" Grid.Row="1" HeightRequest="490" StrokeShape="RoundRectangle 25,25,0,0" StrokeThickness="0" Margin="-1,0,-1,0">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto, Auto, *" Padding="20,20,20,40" BackgroundColor="{AppThemeBinding Light={StaticResource TitleTextColor}, Dark={StaticResource Gray950}}">
+                <Label Text="Welcome" HorizontalOptions="Center" FontAttributes="Bold" FontSize="30" Grid.Row="0" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryLight}}"/>
+                <Label Text="Please enter your login and password" HorizontalOptions="Center" Grid.Row="1"/>
+                <dxe:TextEdit LabelText="Login" StartIcon="editorsname" Margin="0,20,0,20" Grid.Row="2" Text="{Binding UserName}" IsEnabled="{Binding AllowNewAuthRequests}" ReturnType="Next"/>
+                <dxe:PasswordEdit LabelText="Password" StartIcon="editorspassword" Margin="0,20,0,20" HasError="{Binding HasError}" Text="{Binding Password}" ErrorText="{Binding ErrorText}" Grid.Row="3" ReturnCommand="{Binding LoginCommand}" IsEnabled="{Binding AllowNewAuthRequests}"/>
+                <ActivityIndicator Margin="0,0,0,0" VerticalOptions="Center" IsRunning="{Binding IsAuthInProcess}" HorizontalOptions="Center" WidthRequest="40" HeightRequest="40" Color="{StaticResource Primary}" Grid.Row="4"/>
+                <VerticalStackLayout Grid.Row="5" VerticalOptions="End">
+                    <HorizontalStackLayout Margin="0,0,0,5" HorizontalOptions="Center" VerticalOptions="End">
+                        <Label Text="Don't have an account?" VerticalOptions="Center" />
+                        <dxco:SimpleButton FontAttributes="Bold" Text="Sign up" VerticalOptions="Center" BackgroundColor="Transparent" Margin="5,0,0,0" MinimumHeightRequest="0" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryLight}}" FontSize="14" Padding="0" Command="{Binding SignUpCommand}" IsEnabled="{Binding AllowNewAuthRequests}"/>
+                    </HorizontalStackLayout>
+                    <dxco:SimpleButton Text="Sign In" Command="{Binding LoginCommand}"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

@@ -1,25 +1,14 @@
-# Product/Platform - Task
+# Use DevExpress MAUI and Blazor components to Create a Blazor Hybrid Application
 
-This is the repository template for creating new examples. Describe the solved task here.
+A demo of DevExpress Blazor and MAUI components in a Blazor Hybrid scenario.
 
-Put a screenshot that illustrates the result here.
+## Files to Review
 
-Then, add implementation details (steps, code snippets, and other technical information in a free form), or add a link to an existing document with implementation details. 
-
-## Files to Look At
-
-- link.cs (VB: link.vb)
-- link.js
-- ...
-
-## Documentation
-
-- link
-- link
-- ...
-
-## More Examples
-
-- link
-- link
-- ...
+* [BlazorDemo.Shared/Components](./BlazorDemo.Shared/Components) - shared Razor components for MAUI and Blazor.
+* [BlazorDemo.Shared/Data](./BlazorDemo.Shared/Data) - shared data layer.
+* [BlazorDemo.Server/Pages/GridPage.razor](./BlazorDemo.Server/Pages/GridPage.razor) - Razor component usage in Blazor Server.
+* [BlazorDemo.MAUI/Pages/GridPage.razor](./BlazorDemo.MAUI/Pages/GridPage.razor) - Razor component usage in MAUI.
+* [BlazorDemo.Server/Program.cs](./BlazorDemo.Server/Program.cs) - data layer registration, database initialization, DevExpress size mode in Blazor Server.
+* [BlazorDemo.MAUI/MauiProgram.cs](./BlazorDemo.MAUI/MauiProgram.cs) - data layer registration and DevExpress size mode in MAUI (size mode is set to Large instead of Medium).
+* [BlazorDemo.MAUI/MauiViews](./BlazorDemo.MAUI/MauiViews) - views built with MAUI.
+* [BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml](./BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml) - a MAUI view that references a Razor component.

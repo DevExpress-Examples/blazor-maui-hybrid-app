@@ -1,0 +1,20 @@
+﻿@page "/grid"
+
+@using BlazorDemo.Shared.Data
+
+@if(SelectedIssue != null) {
+    <GridDetails GotoListView="@ShowIssueList" SelectedIssue="@SelectedIssue" />
+} else {
+    <GridList GotoDetailsView="@ShowIssueDetails" />
+}
+
+@code {
+    Issue SelectedIssue { get; set; }
+
+    void ShowIssueDetails(Issue issue) {
+        SelectedIssue = issue;
+    }
+    void ShowIssueList() {
+        SelectedIssue = null;
+    }
+}

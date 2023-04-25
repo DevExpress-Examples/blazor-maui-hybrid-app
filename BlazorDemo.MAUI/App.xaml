@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:local="clr-namespace:BlazorDemo.MAUI"
+             x:Class="BlazorDemo.MAUI.App">
+    <Application.Resources>
+        <Color x:Key="Primary">#6750A4</Color>
+        <Color x:Key="White">White</Color>
+        <Color x:Key="Black">Black</Color>
+        <Color x:Key="PrimaryLight">#D0BCFF</Color>
+        <Color x:Key="SurfaceLight">#F9F6FF</Color>
+        <Color x:Key="Gray50">#F2F2F7</Color>
+        <Color x:Key="Gray100">#E1E1E1</Color>
+        <Color x:Key="Gray200">#C8C8C8</Color>
+        <Color x:Key="Gray300">#ACACAC</Color>
+        <Color x:Key="Gray400">#919191</Color>
+        <Color x:Key="Gray500">#6E6E6E</Color>
+        <Color x:Key="Gray600">#404040</Color>
+        <Color x:Key="Gray900">#212121</Color>
+        <Color x:Key="Gray950">#141414</Color>
+        <Color x:Key="NormalText">#55575c</Color>
+        <Color x:Key="NormalHeaderText">#55575c</Color>
+        <Color x:Key="NormalLightText">#959aa0</Color>
+        <Color x:Key="TitleTextColor">White</Color>
+        <Color x:Key="NormalBackgroundColor">White</Color>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+            <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
+            <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
+        </Style>
+
+        <Style TargetType="Shell" ApplyToDerivedTypes="True">
+            <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource Black}}" />
+            <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource White}}" />
+            <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}" />
+            <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
+            <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" />
+            <Setter Property="Shell.NavBarHasShadow" Value="False" />
+            <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Black}}" />
+            <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
+        </Style>
+
+        <Style TargetType="dxco:SimpleButton" x:Key="cardButtonStyle">
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark={StaticResource Gray900}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="18"/>
+            <Setter Property="Shadow">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="Shadow">
+                        <On Platform="iOS">
+                            <On.Value>
+                                <Shadow Brush="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}" Radius="8" />
+                            </On.Value>
+                        </On>
+                        <On Platform="Android">
+                            <On.Value>
+                                <Shadow Brush="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}" Radius="30" />
+                            </On.Value>
+                        </On>
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Page" ApplyToDerivedTypes="True">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource Black}}" />
+        </Style>
+        <Style TargetType="Border" x:Key="shadowBorder">
+            <Setter Property="StrokeShape" Value="RoundRectangle 20,20,20,20"/>
+            <Setter Property="StrokeThickness" Value="0"/>
+            <Setter Property="Stroke" Value="{AppThemeBinding Light=White, Dark={StaticResource Gray900}}"/>
+            <Setter Property="Shadow">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="Shadow">
+                        <On Platform="iOS">
+                            <On.Value>
+                                <Shadow Brush="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}" Radius="8" />
+                            </On.Value>
+                        </On>
+                        <On Platform="Android">
+                            <On.Value>
+                                <Shadow Brush="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}" Radius="30" />
+                            </On.Value>
+                        </On>
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
