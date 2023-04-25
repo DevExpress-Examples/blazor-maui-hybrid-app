@@ -40,14 +40,14 @@ This page shows how to use our [SimpleButton](https://docs.devexpress.com/MAUI/D
 
 ## Files to Review
 
-* [BlazorDemo.Shared/Components](./BlazorDemo.Shared/Components) -- Shared Razor components for MAUI and Blazor.
-* [BlazorDemo.Shared/Data](./BlazorDemo.Shared/Data) -- Shared data layer.
-* [BlazorDemo.Server/Pages/GridPage.razor](./BlazorDemo.Server/Pages/GridPage.razor) -- Razor component usage in Blazor Server.
-* [BlazorDemo.MAUI/Pages/GridPage.razor](./BlazorDemo.MAUI/Pages/GridPage.razor) -- Razor component usage in MAUI.
-* [BlazorDemo.Server/Program.cs](./BlazorDemo.Server/Program.cs) -- Data layer registration, database initialization, DevExpress size mode in Blazor Server.
-* [BlazorDemo.MAUI/MauiProgram.cs](./BlazorDemo.MAUI/MauiProgram.cs) -- Data layer registration and DevExpress size mode in MAUI (size mode is set to Large instead of Medium).
-* [BlazorDemo.MAUI/MauiViews](./BlazorDemo.MAUI/MauiViews) -- Views built with MAUI.
-* [BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml](./BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml) -- A MAUI view that references a Razor component.
+* [BlazorDemo.Shared/Components](./BlazorDemo.Shared/Components) - Shared Razor components for MAUI and Blazor.
+* [BlazorDemo.Shared/Data](./BlazorDemo.Shared/Data) - Shared data layer.
+* [BlazorDemo.Server/Pages/GridPage.razor](./BlazorDemo.Server/Pages/GridPage.razor) - Razor component usage in Blazor Server.
+* [BlazorDemo.MAUI/Pages/GridPage.razor](./BlazorDemo.MAUI/Pages/GridPage.razor) - Razor component usage in MAUI.
+* [BlazorDemo.Server/Program.cs](./BlazorDemo.Server/Program.cs) - Data layer registration, database initialization, DevExpress size mode in Blazor Server.
+* [BlazorDemo.MAUI/MauiProgram.cs](./BlazorDemo.MAUI/MauiProgram.cs) - Data layer registration and DevExpress size mode in MAUI (size mode is set to Large instead of Medium).
+* [BlazorDemo.MAUI/MauiViews](./BlazorDemo.MAUI/MauiViews) - Views built with MAUI.
+* [BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml](./BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml) - A MAUI view that references a Razor component.
 
 ## Documentation
 
