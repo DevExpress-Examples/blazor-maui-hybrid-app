@@ -1,4 +1,4 @@
-# Use DevExpress MAUI and Blazor components to Create a Blazor Hybrid Application
+# Use DevExpress MAUI and Blazor Components to Create a Blazor Hybrid Application
 
 A demo of DevExpress Blazor and MAUI components in a Blazor Hybrid scenario.
 
