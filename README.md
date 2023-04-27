@@ -6,6 +6,7 @@
 
 # Use DevExpress MAUI and Blazor Components to Create a .NET MAUI Blazor Hybrid app
 
+
 This demo example shows how to utilize DevExpress Blazor and .NET MAUI components to develop a .NET MAUI Blazor Hybrid app. 
 
 ## Blazor Hybrid View
