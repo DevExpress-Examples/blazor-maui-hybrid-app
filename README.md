@@ -10,7 +10,7 @@ This demo example shows how to utilize DevExpress Blazor and .NET MAUI component
 
 ## Blazor Hybrid View
 
-TODO Image
+<img src="media/hybrid-view.png" alt="Views built with the DevExpress for .NET MAUI library" height="400">
 
 This page uses the DevExpress Blazor Grid to display a list of tasks. Adaptive triggers reduce the number of columns and display a column chooser button on smaller screens. The code for this view is shared between MAUI and Blazor Server apps, but MAUI version uses a larger size mode.
 
