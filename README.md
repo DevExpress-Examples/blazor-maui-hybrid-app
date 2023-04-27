@@ -8,6 +8,16 @@
 
 This demo example shows how to utilize DevExpress Blazor and .NET MAUI components to develop a .NET MAUI Blazor Hybrid app. 
 
+## Blazor Hybrid View
+
+TODO Image
+
+This page uses the DevExpress Blazor Grid to display a list of tasks. Adaptive triggers reduce the number of columns and display a column chooser button on smaller screens. The code for this view is shared between MAUI and Blazor Server apps, but MAUI version uses a larger size mode.
+
+**Files to look at:** [HybridGridPage.xaml](./BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml), [MauiProgram.cs](./BlazorDemo.MAUI/MauiProgram.cs), [GridList.razor](./BlazorDemo.Shared/Components/GridList.razor)
+
+**Read more:** [Blazor Size Modes](https://docs.devexpress.com/Blazor/401784/common-concepts/customize-appearance/size-modes), [Adaptive Layout API](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxLayoutBreakpoint)
+
 ## Views Built with MAUI
 
 <img src="media/maui-views.png" alt="Views built with the DevExpress for .NET MAUI library" height="400">
@@ -38,18 +48,6 @@ This page shows how to use our [SimpleButton](https://docs.devexpress.com/MAUI/D
 
 **Read more:** [Cards with Custom Content](https://docs.devexpress.com/MAUI/404341/scenarios/buttons-and-charts-in-cards)
 
-## Files to Review
-
-* [BlazorDemo.Shared/Components](./BlazorDemo.Shared/Components) - Shared Razor components for MAUI and Blazor.
-* [BlazorDemo.Shared/Data](./BlazorDemo.Shared/Data) - Shared data layer.
-* [BlazorDemo.Server/Pages/GridPage.razor](./BlazorDemo.Server/Pages/GridPage.razor) - Razor component usage in Blazor Server.
-* [BlazorDemo.MAUI/Pages/GridPage.razor](./BlazorDemo.MAUI/Pages/GridPage.razor) - Razor component usage in MAUI.
-* [BlazorDemo.Server/Program.cs](./BlazorDemo.Server/Program.cs) - Data layer registration, database initialization, DevExpress size mode in Blazor Server.
-* [BlazorDemo.MAUI/MauiProgram.cs](./BlazorDemo.MAUI/MauiProgram.cs) - Data layer registration and DevExpress size mode in MAUI (size mode is set to Large instead of Medium).
-* [BlazorDemo.MAUI/MauiViews](./BlazorDemo.MAUI/MauiViews) - Views built with MAUI.
-* [BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml](./BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml) - A MAUI view that references a Razor component.
-
 ## Documentation
 
 * [Build a .NET MAUI Blazor Hybrid app](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/tutorials/maui?view=aspnetcore-7.0&pivots=windows)
-
