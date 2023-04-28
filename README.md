@@ -1,5 +1,4 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/632326528/22.2.4%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1162029)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
@@ -10,9 +9,11 @@ This demo example shows how to utilize DevExpress Blazor and .NET MAUI component
 
 ## Blazor Hybrid View
 
-<img src="media/hybrid-view.png" alt="Views built with the DevExpress for .NET MAUI library" height="400">
+<img src="media/hybrid-view.png" alt=".NET MAUI Blazor Hybrid view" height="400">
 
-This page uses the DevExpress Blazor Grid to display a list of tasks. Adaptive triggers reduce the number of columns and display a column chooser button on smaller screens. The code for this view is shared between MAUI and Blazor Server apps, but MAUI version uses a larger size mode.
+This page uses the DevExpress Blazor Grid to display a list of tasks. When the app is viewed on smaller screen sizes, adaptive triggers reduce the number of columns and display a column chooser button. 
+
+The code for this view is shared between MAUI and Blazor Server apps. The MAUI version uses a larger size mode.
 
 **Files to look at:** [HybridGridPage.xaml](./BlazorDemo.MAUI/MauiViews/HybridGridPage.xaml), [MauiProgram.cs](./BlazorDemo.MAUI/MauiProgram.cs), [GridList.razor](./BlazorDemo.Shared/Components/GridList.razor)
 
@@ -34,7 +35,7 @@ This page shows how to implement a login UI in your .NET MAUI application.
 
 ### Blogs View
 
-This page uses our [DXCollectionView](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView?p=netframework) component to show a collection of items with infinite scrolling.
+This page uses our [DXCollectionView](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView?p=netframework) component to show a collection of items. Note the infinite scrolling feature - the component loads batches of items on demand.
 
 **File to look at:** [BlogsPage.xaml](BlazorDemo.MAUI/MauiViews/BlogsPage.xaml)
 
