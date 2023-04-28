@@ -36,7 +36,7 @@ This page shows how to implement a login UI in your .NET MAUI application.
 
 ### Blogs View
 
-This page uses our [DXCollectionView](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView?p=netframework) component to show a collection of items with infinite scrolling.
+This page uses our [DXCollectionView](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView?p=netframework) component to show a collection of items. Note the infinite scrolling feature - the component loads batches of items on demand.
 
 **File to look at:** [BlogsPage.xaml](BlazorDemo.MAUI/MauiViews/BlogsPage.xaml)
 
