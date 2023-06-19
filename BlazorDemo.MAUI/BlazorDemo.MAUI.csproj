@@ -50,22 +50,6 @@
     </ItemGroup>
 
 	<ItemGroup>
-		<None Remove="Resources\Images\avatars\alex.jpg" />
-		<None Remove="Resources\Images\avatars\andrey.jpg" />
-		<None Remove="Resources\Images\avatars\anthony.jpg" />
-		<None Remove="Resources\Images\avatars\bogdan.jpg" />
-		<None Remove="Resources\Images\avatars\boris.jpg" />
-		<None Remove="Resources\Images\avatars\dennis.jpg" />
-		<None Remove="Resources\Images\avatars\dmitry.jpg" />
-		<None Remove="Resources\Images\avatars\elena.jpg" />
-		<None Remove="Resources\Images\avatars\kseniya.jpg" />
-		<None Remove="Resources\Images\avatars\lana.png" />
-		<None Remove="Resources\Images\avatars\margarita.jpg" />
-		<None Remove="Resources\Images\avatars\poline.png" />
-		<None Remove="Resources\Images\avatars\vlada.jpg" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiImage Include="Resources\Images\avatars\alex.jpg" />
 	  <MauiImage Include="Resources\Images\avatars\andrey.jpg" />
 	  <MauiImage Include="Resources\Images\avatars\anthony.jpg" />
@@ -83,7 +67,8 @@
 
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
-        <PackageReference Include="DevExpress.Blazor" Version="22.2.4" />
+        <PackageReference Include="DevExpress.Blazor" Version="23.1.*" />
+        <PackageReference Include="DevExpress.Data" Version="23.1.*" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
     </ItemGroup>
 
@@ -93,31 +78,31 @@
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
       <PackageReference Include="DevExpress.Maui.Charts">
-        <Version>22.2.4</Version>
+        <Version>23.1.*</Version>
       </PackageReference>
       <PackageReference Include="DevExpress.Maui.CollectionView">
-        <Version>22.2.4</Version>
+        <Version>23.1.*</Version>
       </PackageReference>
       <PackageReference Include="DevExpress.Maui.Controls">
-        <Version>22.2.4</Version>
+        <Version>23.1.*</Version>
       </PackageReference>
       <PackageReference Include="DevExpress.Maui.Editors">
-        <Version>22.2.4</Version>
+        <Version>23.1.*</Version>
       </PackageReference>
     </ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
 		<PackageReference Include="DevExpress.Maui.Charts">
-			<Version>22.2.4</Version>
+			<Version>23.1.*</Version>
 		</PackageReference>
 		<PackageReference Include="DevExpress.Maui.CollectionView">
-			<Version>22.2.4</Version>
+			<Version>23.1.*</Version>
 		</PackageReference>
 		<PackageReference Include="DevExpress.Maui.Controls">
-			<Version>22.2.4</Version>
+			<Version>23.1.*</Version>
 		</PackageReference>
 		<PackageReference Include="DevExpress.Maui.Editors">
-			<Version>22.2.4</Version>
+			<Version>23.1.*</Version>
 		</PackageReference>
 	</ItemGroup>
 
