@@ -1,139 +1,123 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
-
-    <PropertyGroup>
-        <UseInterpreter>true</UseInterpreter>
-        <TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
-        <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-        <!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
-        <OutputType>Exe</OutputType>
-        <RootNamespace>BlazorDemo.MAUI</RootNamespace>
-        <UseMaui>true</UseMaui>
-        <SingleProject>true</SingleProject>
-				<Nullable>disable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <EnableDefaultCssItems>false</EnableDefaultCssItems>
-
-        <!-- Display name -->
-        <ApplicationTitle>Blazor MAUI</ApplicationTitle>
-
-        <!-- App Identifier -->
-        <ApplicationId>com.companyname.blazormaui</ApplicationId>
-        <ApplicationIdGuid>3C1B2C61-7A59-4FCC-AF5C-7FBCF36A03B6</ApplicationIdGuid>
-
-        <!-- Versions -->
-        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-        <ApplicationVersion>1</ApplicationVersion>
-
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-				<ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <!-- App Icon -->
-        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-
-        <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
-        <!-- Images -->
-        <MauiImage Include="Resources\Images\*" />
-        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
-
-        <!-- Custom Fonts -->
-        <MauiFont Include="Resources\Fonts\*" />
-
-        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-    </ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Include="Resources\Images\avatars\alex.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\andrey.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\anthony.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\bogdan.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\boris.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\dennis.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\dmitry.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\elena.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\kseniya.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\lana.png" />
-	  <MauiImage Include="Resources\Images\avatars\margarita.jpg" />
-	  <MauiImage Include="Resources\Images\avatars\poline.png" />
-	  <MauiImage Include="Resources\Images\avatars\vlada.jpg" />
-	</ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
-        <PackageReference Include="DevExpress.Blazor" Version="23.1.*" />
-        <PackageReference Include="DevExpress.Data" Version="23.1.*" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\BlazorDemo.Shared\BlazorDemo.Shared.csproj" />
-    </ItemGroup>
-
-    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
-      <PackageReference Include="DevExpress.Maui.Charts">
-        <Version>23.1.*</Version>
-      </PackageReference>
-      <PackageReference Include="DevExpress.Maui.CollectionView">
-        <Version>23.1.*</Version>
-      </PackageReference>
-      <PackageReference Include="DevExpress.Maui.Controls">
-        <Version>23.1.*</Version>
-      </PackageReference>
-      <PackageReference Include="DevExpress.Maui.Editors">
-        <Version>23.1.*</Version>
-      </PackageReference>
-    </ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-		<PackageReference Include="DevExpress.Maui.Charts">
-			<Version>23.1.*</Version>
-		</PackageReference>
-		<PackageReference Include="DevExpress.Maui.CollectionView">
-			<Version>23.1.*</Version>
-		</PackageReference>
-		<PackageReference Include="DevExpress.Maui.Controls">
-			<Version>23.1.*</Version>
-		</PackageReference>
-		<PackageReference Include="DevExpress.Maui.Editors">
-			<Version>23.1.*</Version>
-		</PackageReference>
-	</ItemGroup>
-
-    <ItemGroup>
-      <Compile Update="AppShell.xaml.cs">
-        <DependentUpon>AppShell.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="MauiViews\BlogsPage.xaml.cs">
-        <DependentUpon>BlogsPage.xaml</DependentUpon>
-      </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <MauiXaml Update="MauiViews\AnalyticsPage.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
-      <MauiXaml Update="MauiViews\BlogsPage.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
-      <MauiXaml Update="MauiViews\ChannelsDonutView.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
-      <MauiXaml Update="MauiViews\HybridGridPage.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
-      <MauiXaml Update="MauiViews\LoginPage.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
-      <MauiXaml Update="MauiViews\PageviewsAreaChartView.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
-    </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <UseInterpreter>true</UseInterpreter>
+    <TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
+    <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+    <!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BlazorDemo.MAUI</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCssItems>false</EnableDefaultCssItems>
+    <!-- Display name -->
+    <ApplicationTitle>Blazor MAUI</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>com.companyname.blazormaui</ApplicationId>
+    <ApplicationIdGuid>3C1B2C61-7A59-4FCC-AF5C-7FBCF36A03B6</ApplicationIdGuid>
+    <!-- Versions -->
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    <ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- App Icon -->
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
+    <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <MauiImage Include="Resources\Images\avatars\alex.jpg" />
+    <MauiImage Include="Resources\Images\avatars\andrey.jpg" />
+    <MauiImage Include="Resources\Images\avatars\anthony.jpg" />
+    <MauiImage Include="Resources\Images\avatars\bogdan.jpg" />
+    <MauiImage Include="Resources\Images\avatars\boris.jpg" />
+    <MauiImage Include="Resources\Images\avatars\dennis.jpg" />
+    <MauiImage Include="Resources\Images\avatars\dmitry.jpg" />
+    <MauiImage Include="Resources\Images\avatars\elena.jpg" />
+    <MauiImage Include="Resources\Images\avatars\kseniya.jpg" />
+    <MauiImage Include="Resources\Images\avatars\lana.png" />
+    <MauiImage Include="Resources\Images\avatars\margarita.jpg" />
+    <MauiImage Include="Resources\Images\avatars\poline.png" />
+    <MauiImage Include="Resources\Images\avatars\vlada.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
+    <PackageReference Include="DevExpress.Blazor" Version="23.2.*" />
+    <PackageReference Include="DevExpress.Data" Version="23.2.*" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorDemo.Shared\BlazorDemo.Shared.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+    <PackageReference Include="DevExpress.Maui.Charts">
+      <Version>23.1.*</Version>
+    </PackageReference>
+    <PackageReference Include="DevExpress.Maui.CollectionView">
+      <Version>23.1.*</Version>
+    </PackageReference>
+    <PackageReference Include="DevExpress.Maui.Controls">
+      <Version>23.1.*</Version>
+    </PackageReference>
+    <PackageReference Include="DevExpress.Maui.Editors">
+      <Version>23.1.*</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
+    <PackageReference Include="DevExpress.Maui.Charts">
+      <Version>23.1.*</Version>
+    </PackageReference>
+    <PackageReference Include="DevExpress.Maui.CollectionView">
+      <Version>23.1.*</Version>
+    </PackageReference>
+    <PackageReference Include="DevExpress.Maui.Controls">
+      <Version>23.1.*</Version>
+    </PackageReference>
+    <PackageReference Include="DevExpress.Maui.Editors">
+      <Version>23.1.*</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AppShell.xaml.cs">
+      <DependentUpon>AppShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MauiViews\BlogsPage.xaml.cs">
+      <DependentUpon>BlogsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <MauiXaml Update="MauiViews\AnalyticsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="MauiViews\BlogsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="MauiViews\ChannelsDonutView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="MauiViews\HybridGridPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="MauiViews\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="MauiViews\PageviewsAreaChartView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+  </ItemGroup>
 </Project>
