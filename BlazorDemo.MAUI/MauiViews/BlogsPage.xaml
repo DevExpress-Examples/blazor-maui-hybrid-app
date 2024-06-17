@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
-             xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+             xmlns:dx="http://schemas.devexpress.com/maui"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewModels="clr-namespace:BlazorDemo.MAUI.ViewModels"
              x:Class="BlazorDemo.MAUI.MauiViews.BlogsPage">
@@ -13,8 +11,8 @@
         <viewModels:BlogsViewModel/>
     </ContentPage.BindingContext>
     <Grid>
-        <dxcv:DXCollectionView ItemsSource="{Binding Blogs}" IsRefreshing="{Binding IsLoading, Mode=TwoWay}" IsLoadMoreEnabled="True" LoadMoreCommand="{Binding LoadMoreCommand}" TapCommand="{Binding OpenBlogCommand}">
-            <dxcv:DXCollectionView.ItemTemplate>
+        <dx:DXCollectionView ItemsSource="{Binding Blogs}" IsRefreshing="{Binding IsLoading, Mode=TwoWay}" IsLoadMoreEnabled="True" LoadMoreCommand="{Binding LoadMoreCommand}" TapCommand="{Binding OpenBlogCommand}">
+            <dx:DXCollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type viewModels:BlogPost}">
                     <VerticalStackLayout Margin="0,8,0,8">
                         <Border StrokeShape="RoundRectangle 20,20,20,20" Margin="16,0,16,10">
@@ -29,16 +27,16 @@
                             </Image>
                             <Label Text="{Binding AuthorName}" VerticalOptions="Center" TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray300}}" Margin="5,0,0,0" Grid.Column="1"/>
                             <Label Text="{Binding PublicationDate, StringFormat=' &#8226; {0:m}'}" TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray300}}" VerticalOptions="Center" Grid.Column="2"/>
-                            <dxc:SimpleButton BackgroundColor="Transparent" Grid.Column="3" Margin="10,0,0,0" Padding="4,0,4,0" WidthRequest="28" VerticalOptions="Center"
+                            <dx:SimpleButton BackgroundColor="Transparent" Grid.Column="3" Margin="10,0,0,0" Padding="4,0,4,0" WidthRequest="28" VerticalOptions="Center"
                                               CommandParameter="{Binding}"
                                               Command="{Binding Source={RelativeSource Mode=FindAncestorBindingContext, AncestorType={x:Type viewModels:BlogsViewModel}}, Path=ShareCommand}">
                                 <Image Source="share" HeightRequest="20"/>
-                            </dxc:SimpleButton>
+                            </dx:SimpleButton>
                         </Grid>
                         <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}" HeightRequest="2" StrokeThickness="0" Margin="0,10,0,0"/>
                     </VerticalStackLayout>
                 </DataTemplate>
-            </dxcv:DXCollectionView.ItemTemplate>
-        </dxcv:DXCollectionView>
+            </dx:DXCollectionView.ItemTemplate>
+        </dx:DXCollectionView>
     </Grid>
 </ContentPage>

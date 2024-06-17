@@ -1,51 +1,50 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:BlazorDemo.MAUI.ViewModels"
-             xmlns:dxc="clr-namespace:DevExpress.Maui.Charts;assembly=DevExpress.Maui.Charts"
+             xmlns:dx="http://schemas.devexpress.com/maui"
              xmlns:msgraf="clr-namespace:Microsoft.Maui.Graphics;assembly=Microsoft.Maui"
              xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
              x:Class="BlazorDemo.MAUI.MauiViews.ChannelsDonutView">
     <ContentView.BindingContext>
         <viewModels:ChannelDonutViewModel/>
     </ContentView.BindingContext>
-    <dxc:PieChartView>
-        <dxc:PieChartView.Series>
-            <dxc:DonutSeries>
-                <dxc:DonutSeries.Data>
-                    <dxc:PieSeriesDataAdapter DataSource="{Binding TrafficChannelsData}" LabelDataMember="ChannelName" ValueDataMember="Value"/>
-                </dxc:DonutSeries.Data>
-                <dxc:DonutSeries.Label>
-                    <dxc:PieSeriesLabel Position="Inside" TextPattern="{}{V}">
-                        <dxc:PieSeriesLabel.Style>
-                            <dxc:PieSeriesLabelStyle>
-                                <dxc:PieSeriesLabelStyle.TextStyle>
-                                    <dxc:TextStyle Size="12" Color="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
-                                </dxc:PieSeriesLabelStyle.TextStyle>
-                            </dxc:PieSeriesLabelStyle>
-                        </dxc:PieSeriesLabel.Style>
-                    </dxc:PieSeriesLabel>
-                </dxc:DonutSeries.Label>
-                <dxc:DonutSeries.CenterLabel>
-                    <dxc:PieCenterTextLabel TextPattern="Sources"/>
-                </dxc:DonutSeries.CenterLabel>
-            </dxc:DonutSeries>
-        </dxc:PieChartView.Series>
-        <dxc:PieChartView.Legend>
-            <dxc:Legend Orientation="TopToBottom"
+    <dx:PieChartView>
+        <dx:PieChartView.Series>
+            <dx:DonutSeries>
+                <dx:DonutSeries.Data>
+                    <dx:PieSeriesDataAdapter DataSource="{Binding TrafficChannelsData}" LabelDataMember="ChannelName" ValueDataMember="Value"/>
+                </dx:DonutSeries.Data>
+                <dx:DonutSeries.Label>
+                    <dx:PieSeriesLabel Position="Inside" TextPattern="{}{V}">
+                        <dx:PieSeriesLabel.Style>
+                            <dx:PieSeriesLabelStyle>
+                                <dx:PieSeriesLabelStyle.TextStyle>
+                                    <dx:TextStyle Size="12" Color="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
+                                </dx:PieSeriesLabelStyle.TextStyle>
+                            </dx:PieSeriesLabelStyle>
+                        </dx:PieSeriesLabel.Style>
+                    </dx:PieSeriesLabel>
+                </dx:DonutSeries.Label>
+                <dx:DonutSeries.CenterLabel>
+                    <dx:PieCenterTextLabel TextPattern="Sources"/>
+                </dx:DonutSeries.CenterLabel>
+            </dx:DonutSeries>
+        </dx:PieChartView.Series>
+        <dx:PieChartView.Legend>
+            <dx:Legend Orientation="TopToBottom"
                     HorizontalPosition="RightOutside"
                     VerticalPosition="Center">
-                <dxc:Legend.Style>
-                    <dxc:LegendStyle MarkerSize="20" ItemsVerticalIndent="20" TextIndent="10" IndentFromDiagram="40" BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark=Black}" >
-                        <dxc:LegendStyle.TextStyle>
-                            <dxc:TextStyle Size="14" Color="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}" />
-                        </dxc:LegendStyle.TextStyle>
-                    </dxc:LegendStyle>
-                </dxc:Legend.Style>
-            </dxc:Legend>
-        </dxc:PieChartView.Legend>
-        <dxc:PieChartView.ChartStyle>
-            <dxc:PieChartStyle Palette="{Binding TrafficColors}" BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark=Black}"/>
-        </dxc:PieChartView.ChartStyle>
-    </dxc:PieChartView>
+                <dx:Legend.Style>
+                    <dx:LegendStyle MarkerSize="20" ItemsVerticalIndent="20" TextIndent="10" IndentFromDiagram="40" BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark=Black}" >
+                        <dx:LegendStyle.TextStyle>
+                            <dx:TextStyle Size="14" Color="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}" />
+                        </dx:LegendStyle.TextStyle>
+                    </dx:LegendStyle>
+                </dx:Legend.Style>
+            </dx:Legend>
+        </dx:PieChartView.Legend>
+        <dx:PieChartView.ChartStyle>
+            <dx:PieChartStyle Palette="{Binding TrafficColors}" BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark=Black}"/>
+        </dx:PieChartView.ChartStyle>
+    </dx:PieChartView>
 </ContentView>
