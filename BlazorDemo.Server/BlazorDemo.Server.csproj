@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor" Version="23.1.*" />
+    <PackageReference Include="DevExpress.Blazor" Version="24.1.*" />
 
   </ItemGroup>
   <ItemGroup>
