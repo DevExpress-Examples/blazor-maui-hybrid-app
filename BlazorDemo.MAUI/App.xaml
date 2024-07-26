@@ -42,7 +42,7 @@
             <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
         </Style>
 
-        <Style TargetType="dx:SimpleButton" x:Key="cardButtonStyle">
+        <Style TargetType="dx:DXButton" x:Key="cardButtonStyle">
             <Setter Property="CornerRadius" Value="20"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark={StaticResource Gray900}}"/>
