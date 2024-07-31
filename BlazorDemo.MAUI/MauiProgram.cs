@@ -19,6 +19,10 @@ namespace BlazorDemo.MAUI
                 });
             builder.UseMauiCommunityToolkit();
             builder.UseDevExpress();
+            builder.UseDevExpressCharts();
+            builder.UseDevExpressCollectionView();
+            builder.UseDevExpressControls();
+            builder.UseDevExpressEditors();
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddDevExpressBlazor(options => {
                 options.BootstrapVersion = DevExpress.Blazor.BootstrapVersion.v5;
