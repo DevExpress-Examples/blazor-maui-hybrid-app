@@ -25,6 +25,7 @@ The code for this view is shared between MAUI and Blazor Server apps. The MAUI v
 
 <img src="media/maui-views.png" alt="Views built with the DevExpress for .NET MAUI library" height="400">
 
+
 ### Login View
 
 This page shows how to implement a login UI in your .NET MAUI application.
