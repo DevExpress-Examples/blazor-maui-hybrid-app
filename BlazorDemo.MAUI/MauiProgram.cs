@@ -1,9 +1,6 @@
 ﻿using BlazorDemo.Shared.Data.DataProviders;
 using BlazorDemo.Shared.Data.Services;
-using DevExpress.Blazor;
-using Microsoft.Extensions.Logging;
 using DevExpress.Maui;
-using CommunityToolkit.Maui;
 
 namespace BlazorDemo.MAUI
 {
@@ -11,13 +8,13 @@ namespace BlazorDemo.MAUI
     {
         public static MauiApp CreateMauiApp()
         {
+            DevExpress.Maui.Core.ThemeManager.ApplyThemeToSystemBars = true;
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
-            builder.UseMauiCommunityToolkit();
             builder.UseDevExpress();
             builder.UseDevExpressCharts();
             builder.UseDevExpressCollectionView();
@@ -32,7 +29,6 @@ namespace BlazorDemo.MAUI
             builder.Services.AddScoped<IssuesDataService>();
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
-		builder.Logging.AddDebug();
 #endif
 ;
 

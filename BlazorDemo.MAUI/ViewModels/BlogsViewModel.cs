@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using DevExpress.Maui.Mvvm;
 
 namespace BlazorDemo.MAUI.ViewModels {
     public class BlogsViewModel : BaseViewModel {
@@ -13,7 +15,7 @@ namespace BlazorDemo.MAUI.ViewModels {
         int loadBatchSize = 5;
         int sourceSize = 0;
         bool isLoading;
-        public List<BlogPost> Blogs { get; set; }
+        public ObservableCollection<BlogPost> Blogs { get; set; }
         public ICommand LoadMoreCommand { get; set; }
         public ICommand ShareCommand { get; set; }
         public ICommand OpenBlogCommand { get; set; }
@@ -25,7 +27,7 @@ namespace BlazorDemo.MAUI.ViewModels {
             }
         }
         public BlogsViewModel() {
-            Blogs = new List<BlogPost>();
+            Blogs = new ObservableCollection<BlogPost>();
             sourceSize = DataStorage.GetTotalCount();
             LoadBatch();
             LoadMoreCommand = new Command(LoadMore, CanLoadMore);
@@ -40,7 +42,7 @@ namespace BlazorDemo.MAUI.ViewModels {
                 Thread.Sleep(1000);
                 newBlogsBatch = DataStorage.GetBlogs(lastLoadedIndex, loadBatchSize);
             });
-            Blogs.AddRange(newBlogsBatch);
+            newBlogsBatch.ForEach(x => Blogs.Add(x));
             IsLoading = false;
         }
         public void LoadMore() {

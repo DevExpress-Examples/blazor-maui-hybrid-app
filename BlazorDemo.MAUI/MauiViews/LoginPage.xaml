@@ -27,9 +27,9 @@
                 <VerticalStackLayout Grid.Row="5" VerticalOptions="End">
                     <HorizontalStackLayout Margin="0,0,0,5" HorizontalOptions="Center" VerticalOptions="End">
                         <Label Text="Don't have an account?" VerticalOptions="Center" />
-                        <dx:SimpleButton FontAttributes="Bold" Text="Sign up" VerticalOptions="Center" BackgroundColor="Transparent" Margin="5,0,0,0" MinimumHeightRequest="0" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryLight}}" FontSize="14" Padding="0" Command="{Binding SignUpCommand}" IsEnabled="{Binding AllowNewAuthRequests}"/>
+                        <dx:DXButton FontAttributes="Bold" Content="Sign up" ButtonType="Text" VerticalOptions="Center" Margin="5,0,0,0" Command="{Binding SignUpCommand}" IsEnabled="{Binding AllowNewAuthRequests}"/>
                     </HorizontalStackLayout>
-                    <dx:SimpleButton Text="Sign In" Command="{Binding LoginCommand}"/>
+                    <dx:DXButton Content="Sign In" Command="{Binding LoginCommand}"/>
                 </VerticalStackLayout>
             </Grid>
         </Border>

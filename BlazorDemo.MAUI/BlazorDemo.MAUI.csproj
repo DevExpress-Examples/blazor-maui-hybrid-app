@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <UseInterpreter>true</UseInterpreter>
-    <TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
+    <TargetFrameworks>net9.0-android;net9.0-ios</TargetFrameworks>
     <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
     <!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
     <OutputType>Exe</OutputType>
@@ -20,10 +19,9 @@
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
     <ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
+    <MauiVersion>9.0.10</MauiVersion>
   </PropertyGroup>
   <ItemGroup>
     <!-- App Icon -->
@@ -55,69 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-    <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
-    <PackageReference Include="DevExpress.Blazor" Version="24.1.*" />
-    <PackageReference Include="DevExpress.Data" Version="24.1.*" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+    <PackageReference Include="DevExpress.Blazor" Version="24.2.*" />
+    <PackageReference Include="DevExpress.Data" Version="24.2.*" />
+    <PackageReference Include="DevExpress.Maui.Charts" Version="24.2.*" />
+    <PackageReference Include="DevExpress.Maui.CollectionView" Version="24.2.*" />
+    <PackageReference Include="DevExpress.Maui.Controls" Version="24.2.*" />
+    <PackageReference Include="DevExpress.Maui.Editors" Version="24.2.*" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BlazorDemo.Shared\BlazorDemo.Shared.csproj" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-    <PackageReference Include="DevExpress.Maui.Charts">
-      <Version>24.1.*</Version>
-    </PackageReference>
-    <PackageReference Include="DevExpress.Maui.CollectionView">
-      <Version>24.1.*</Version>
-    </PackageReference>
-    <PackageReference Include="DevExpress.Maui.Controls">
-      <Version>24.1.*</Version>
-    </PackageReference>
-    <PackageReference Include="DevExpress.Maui.Editors">
-      <Version>24.1.*</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
-    <PackageReference Include="DevExpress.Maui.Charts">
-      <Version>24.1.*</Version>
-    </PackageReference>
-    <PackageReference Include="DevExpress.Maui.CollectionView">
-      <Version>24.1.*</Version>
-    </PackageReference>
-    <PackageReference Include="DevExpress.Maui.Controls">
-      <Version>24.1.*</Version>
-    </PackageReference>
-    <PackageReference Include="DevExpress.Maui.Editors">
-      <Version>24.1.*</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="AppShell.xaml.cs">
-      <DependentUpon>AppShell.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="MauiViews\BlogsPage.xaml.cs">
-      <DependentUpon>BlogsPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <MauiXaml Update="MauiViews\AnalyticsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="MauiViews\BlogsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="MauiViews\ChannelsDonutView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="MauiViews\HybridGridPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="MauiViews\LoginPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="MauiViews\PageviewsAreaChartView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
   </ItemGroup>
 </Project>

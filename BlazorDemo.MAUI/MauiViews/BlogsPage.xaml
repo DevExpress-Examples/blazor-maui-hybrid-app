@@ -1,15 +1,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dx="http://schemas.devexpress.com/maui"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewModels="clr-namespace:BlazorDemo.MAUI.ViewModels"
              x:Class="BlazorDemo.MAUI.MauiViews.BlogsPage">
-    <ContentPage.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource Black}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}"/>
-    </ContentPage.Behaviors>
+
     <ContentPage.BindingContext>
         <viewModels:BlogsViewModel/>
     </ContentPage.BindingContext>
+
     <Grid>
         <dx:DXCollectionView ItemsSource="{Binding Blogs}" IsRefreshing="{Binding IsLoading, Mode=TwoWay}" IsLoadMoreEnabled="True" LoadMoreCommand="{Binding LoadMoreCommand}" TapCommand="{Binding OpenBlogCommand}">
             <dx:DXCollectionView.ItemTemplate>
@@ -27,11 +25,11 @@
                             </Image>
                             <Label Text="{Binding AuthorName}" VerticalOptions="Center" TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray300}}" Margin="5,0,0,0" Grid.Column="1"/>
                             <Label Text="{Binding PublicationDate, StringFormat=' &#8226; {0:m}'}" TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray300}}" VerticalOptions="Center" Grid.Column="2"/>
-                            <dx:SimpleButton BackgroundColor="Transparent" Grid.Column="3" Margin="10,0,0,0" Padding="4,0,4,0" WidthRequest="28" VerticalOptions="Center"
+                            <dx:DXButton BackgroundColor="Transparent" Grid.Column="3" Margin="10,0,0,0" Padding="4,0,4,0" WidthRequest="28" VerticalOptions="Center"
                                               CommandParameter="{Binding}"
                                               Command="{Binding Source={RelativeSource Mode=FindAncestorBindingContext, AncestorType={x:Type viewModels:BlogsViewModel}}, Path=ShareCommand}">
                                 <Image Source="share" HeightRequest="20"/>
-                            </dx:SimpleButton>
+                            </dx:DXButton>
                         </Grid>
                         <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}" HeightRequest="2" StrokeThickness="0" Margin="0,10,0,0"/>
                     </VerticalStackLayout>

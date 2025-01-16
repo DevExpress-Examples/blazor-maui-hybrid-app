@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor" Version="24.1.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.4" />
+    <PackageReference Include="DevExpress.Blazor" Version="24.2.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
 
   </ItemGroup>
 
