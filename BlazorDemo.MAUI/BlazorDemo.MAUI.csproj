@@ -60,7 +60,7 @@
     <PackageReference Include="DevExpress.Maui.Controls" Version="24.2.*" />
     <PackageReference Include="DevExpress.Maui.Editors" Version="24.2.*" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup> 
     <ProjectReference Include="..\BlazorDemo.Shared\BlazorDemo.Shared.csproj" />
   </ItemGroup>
 </Project>
